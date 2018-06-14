@@ -15,8 +15,18 @@ SRC = ./ft_parse.c\
 	  ./ft_color2.c\
 	  ./ft_key_settings.c\
 	  ./ft_bresenham.c\
+	  ./ft_struct2.c\
 
-OBJ = $(patsubst %.c,%.o,$(SRC))
+OBJ = ./ft_parse.o\
+	  ./get_map_dimension.o\
+	  ./main.o\
+	  ./ft_struct.o\
+	  ./ft_draw.o\
+	  ./ft_color.o\
+	  ./ft_color2.o\
+	  ./ft_key_settings.o\
+	  ./ft_bresenham.o\
+	  ./ft_struct2.o\
 
 LIBD = ./libft/
 
@@ -35,11 +45,8 @@ HEADER = ./fdf.h
 all: $(NAME)
 
 $(NAME): $(OBJ) $(HEADER) $(LIBD) Makefile
-	$(CC) $(FLAGS) $(OBJ)  $(LIBFT) -I $(IMLX) -L $(LMLX) -lmlx $(FFLAGS) $(SRC) -o $(NAME)
-	@ar rc $(NAME) $(OBJ)
-
-%.o: %.c
-	@$(CC) $(CFLAGS) -I$(LIBD) -c $< -o $@
+	$(MAKE) -C $(LIBD)
+	$(CC) $(FLAGS) -o $(NAME) $(OBJ) $(LIBFT) -I $(IMLX) -L $(LMLX) -lmlx $(FFLAGS)
 
 clean:
 	@$(RM) -f $(OBJ)
