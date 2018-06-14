@@ -14,6 +14,7 @@ SRC = ./ft_parse.c\
 	  ./ft_color.c\
 	  ./ft_color2.c\
 	  ./ft_key_settings.c\
+	  ./ft_key_settings2.c\
 	  ./ft_bresenham.c\
 	  ./ft_struct2.c\
 
@@ -25,6 +26,7 @@ OBJ = ./ft_parse.o\
 	  ./ft_color.o\
 	  ./ft_color2.o\
 	  ./ft_key_settings.o\
+	  ./ft_key_settings2.o\
 	  ./ft_bresenham.o\
 	  ./ft_struct2.o\
 

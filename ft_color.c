@@ -15,7 +15,7 @@
 void		ft_red(t_data *data)
 {
 	mlx_clear_window(data->mlx_ptr, data->win_ptr);
-	data->COL = 0xFF0000;
+	data->col = 0xFF0000;
 	ft_change_struct(data);
 	ft_get_tab(data->arg, data);
 	ft_chartoint(data->arg, data);
@@ -25,7 +25,7 @@ void		ft_red(t_data *data)
 void		ft_blue(t_data *data)
 {
 	mlx_clear_window(data->mlx_ptr, data->win_ptr);
-	data->COL = 0x0000FF;
+	data->col = 0x0000FF;
 	ft_change_struct(data);
 	ft_get_tab(data->arg, data);
 	ft_chartoint(data->arg, data);
@@ -35,7 +35,7 @@ void		ft_blue(t_data *data)
 void		ft_pink(t_data *data)
 {
 	mlx_clear_window(data->mlx_ptr, data->win_ptr);
-	data->COL = 0xFF0099;
+	data->col = 0xFF0099;
 	ft_change_struct(data);
 	ft_get_tab(data->arg, data);
 	ft_chartoint(data->arg, data);
@@ -45,7 +45,7 @@ void		ft_pink(t_data *data)
 void		ft_wargreen(t_data *data)
 {
 	mlx_clear_window(data->mlx_ptr, data->win_ptr);
-	data->COL = 0xCCFF00;
+	data->col = 0xCCFF00;
 	ft_change_struct(data);
 	ft_get_tab(data->arg, data);
 	ft_chartoint(data->arg, data);
@@ -55,7 +55,7 @@ void		ft_wargreen(t_data *data)
 void		ft_purple(t_data *data)
 {
 	mlx_clear_window(data->mlx_ptr, data->win_ptr);
-	data->COL = 0x6600FF;
+	data->col = 0x6600FF;
 	ft_change_struct(data);
 	ft_get_tab(data->arg, data);
 	ft_chartoint(data->arg, data);

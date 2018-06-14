@@ -6,18 +6,18 @@
 /*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 15:56:28 by tlaberro          #+#    #+#             */
-/*   Updated: 2018/06/13 17:25:09 by tlaberro         ###   ########.fr       */
+/*   Updated: 2018/06/14 14:38:42 by tlaberro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-static void ft_struct2(t_data *data)
+static void		ft_struct2(t_data *data)
 {
 	data->yf = 0;
 	data->j = 0;
 	data->l = 0;
-	data->COL = 0xFFFFFF;
+	data->col = 0xFFFFFF;
 	data->arg = NULL;
 	data->decal = 400;
 	data->space = 10;
@@ -25,7 +25,7 @@ static void ft_struct2(t_data *data)
 	data->cote = -2;
 }
 
-void	ft_struct(t_data *data)
+void			ft_struct(t_data *data)
 {
 	data->mlx_ptr = NULL;
 	data->win_ptr = NULL;
@@ -52,7 +52,7 @@ void	ft_struct(t_data *data)
 	ft_struct2(data);
 }
 
-void	ft_change_struct(t_data *data)
+void			ft_change_struct(t_data *data)
 {
 	data->colonne = 0;
 	data->ligne = 0;
@@ -78,7 +78,7 @@ void	ft_change_struct(t_data *data)
 	data->l = 0;
 }
 
-void	ft_rebootstruct(t_data *data)
+void			ft_rebootstruct(t_data *data)
 {
 	data->colonne = 0;
 	data->ligne = 0;

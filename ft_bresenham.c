@@ -26,7 +26,7 @@ static void		ft_dxsupdy(t_data *data)
 			data->coy += data->yinc;
 		}
 		mlx_pixel_put(data->mlx_ptr, data->win_ptr,
-				data->cox, data->coy, data->COL);
+				data->cox, data->coy, data->col);
 		data->i++;
 	}
 }
@@ -45,7 +45,7 @@ static void		ft_dysupdx(t_data *data)
 			data->cox += data->xinc;
 		}
 		mlx_pixel_put(data->mlx_ptr, data->win_ptr,
-				data->cox, data->coy, data->COL);
+				data->cox, data->coy, data->col);
 		data->i++;
 	}
 }
@@ -61,7 +61,7 @@ void			ft_bresenham(int xi, int yi, int xf, t_data *data)
 	data->dx = abs(data->dx);
 	data->dy = abs(data->dy);
 	mlx_pixel_put(data->mlx_ptr, data->win_ptr,
-	data->cox, data->coy, data->COL);
+	data->cox, data->coy, data->col);
 	if (data->dx > data->dy)
 		ft_dxsupdy(data);
 	else

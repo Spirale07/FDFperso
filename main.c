@@ -6,7 +6,7 @@
 /*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/31 16:01:20 by tlaberro          #+#    #+#             */
-/*   Updated: 2018/05/31 16:16:27 by tlaberro         ###   ########.fr       */
+/*   Updated: 2018/06/14 14:44:09 by tlaberro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,9 @@ void			ft_isometrie(int i, int x, t_data *data)
 	tempox = data->tab_int[i][x].x;
 	tempoy = data->tab_int[i][x].y;
 	data->tab_int[i][x].x = (1 * tempox) - (1 * tempoy);
-	data->tab_int[i][x].y = (((data->tab_int[i][x].z + data->zplus)) * data->cote) +
-		((((1 / 2) + (1 % 2)) * tempox) + (((1 / 2) + (1 % 2)) * tempoy));
+	data->tab_int[i][x].y = (((data->tab_int[i][x].z + data->zplus))
+			* data->cote) + ((((1 / 2) + (1 % 2)) * tempox) +
+				(((1 / 2) + (1 % 2)) * tempoy));
 }
 
 void			ft_isotab(t_data *data)
@@ -43,7 +44,7 @@ void			ft_isotab(t_data *data)
 	}
 }
 
-void	ft_color(t_data *data, int key)
+void			ft_color(t_data *data, int key)
 {
 	if (key == 82)
 		ft_white(data);
@@ -79,11 +80,12 @@ int				deal_key(int key, void *param)
 		exit(0);
 	}
 	ft_color(((t_data *)param), key);
-	ft_zoom(((t_data *)param) , key);
-	ft_move(((t_data *)param) , key);
-	ft_changez(((t_data *)param) , key);
-	ft_changecote(((t_data *)param) , key);
+	ft_zoom(((t_data *)param), key);
+	ft_move(((t_data *)param), key);
+	ft_changez(((t_data *)param), key);
+	ft_changecote(((t_data *)param), key);
 	ft_reboot(((t_data *)param), key);
+	ft_direction(((t_data *)param), key);
 	return (0);
 }
 

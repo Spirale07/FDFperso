@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_struct2.c                                       :+:      :+:    :+:   */
+/*   ft_key_settings2.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/06/14 14:38:52 by tlaberro          #+#    #+#             */
-/*   Updated: 2018/06/14 14:39:07 by tlaberro         ###   ########.fr       */
+/*   Created: 2018/06/14 14:36:27 by tlaberro          #+#    #+#             */
+/*   Updated: 2018/06/14 14:36:29 by tlaberro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fdf.h"
 
-void	ft_rebootstruct2(t_data *data)
+void		ft_direction(t_data *data, int key)
 {
-	data->new_zf = 0;
-	data->xdecale = 0;
-	data->ydecale = 0;
-	data->decal = 400;
-	data->space = 10;
-	data->zplus = 0;
-	data->cote = -2;
-	data->yf = 0;
-	data->j = 0;
-	data->l = 0;
-	data->col = 0xFFFFFF;
+	if (key == 123)
+	{
+		mlx_clear_window(data->mlx_ptr, data->win_ptr);
+		data->decal = data->decal - 50;
+		data->zplus = data->zplus - 25;
+		ft_change_struct(data);
+		ft_get_tab(data->arg, data);
+		ft_chartoint(data->arg, data);
+		ft_draw(data);
+	}
 }

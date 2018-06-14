@@ -15,7 +15,7 @@
 void		ft_brown(t_data *data)
 {
 	mlx_clear_window(data->mlx_ptr, data->win_ptr);
-	data->COL = 0x663300;
+	data->col = 0x663300;
 	ft_change_struct(data);
 	ft_get_tab(data->arg, data);
 	ft_chartoint(data->arg, data);
@@ -25,7 +25,7 @@ void		ft_brown(t_data *data)
 void		ft_salmon(t_data *data)
 {
 	mlx_clear_window(data->mlx_ptr, data->win_ptr);
-	data->COL = 0xFA8072;
+	data->col = 0xFA8072;
 	ft_change_struct(data);
 	ft_get_tab(data->arg, data);
 	ft_chartoint(data->arg, data);
@@ -35,7 +35,7 @@ void		ft_salmon(t_data *data)
 void		ft_tomato(t_data *data)
 {
 	mlx_clear_window(data->mlx_ptr, data->win_ptr);
-	data->COL = 0xFF6347;
+	data->col = 0xFF6347;
 	ft_change_struct(data);
 	ft_get_tab(data->arg, data);
 	ft_chartoint(data->arg, data);
@@ -45,7 +45,7 @@ void		ft_tomato(t_data *data)
 void		ft_mocassin(t_data *data)
 {
 	mlx_clear_window(data->mlx_ptr, data->win_ptr);
-	data->COL = 0xFFE4B5;
+	data->col = 0xFFE4B5;
 	ft_change_struct(data);
 	ft_get_tab(data->arg, data);
 	ft_chartoint(data->arg, data);
@@ -55,7 +55,7 @@ void		ft_mocassin(t_data *data)
 void		ft_white(t_data *data)
 {
 	mlx_clear_window(data->mlx_ptr, data->win_ptr);
-	data->COL = 0xFFFFFF;
+	data->col = 0xFFFFFF;
 	ft_change_struct(data);
 	ft_get_tab(data->arg, data);
 	ft_chartoint(data->arg, data);

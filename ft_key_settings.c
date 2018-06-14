@@ -126,14 +126,4 @@ void		ft_reboot(t_data *data, int key)
 		ft_chartoint(data->arg, data);
 		ft_draw(data);
 	}
-	if (key == 123)
-	{
-		mlx_clear_window(data->mlx_ptr, data->win_ptr);
-		data->decal = data->decal - 50;
-		data->zplus = data->zplus - 25;
-		ft_change_struct(data);
-		ft_get_tab(data->arg, data);
-		ft_chartoint(data->arg, data);
-		ft_draw(data);
-	}
 }
