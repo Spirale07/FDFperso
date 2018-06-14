@@ -83,7 +83,6 @@ int				deal_key(int key, void *param)
 	ft_zoom(((t_data *)param), key);
 	ft_move(((t_data *)param), key);
 	ft_changez(((t_data *)param), key);
-	ft_changecote(((t_data *)param), key);
 	ft_reboot(((t_data *)param), key);
 	ft_direction(((t_data *)param), key);
 	return (0);

@@ -47,8 +47,8 @@ HEADER = ./fdf.h
 all: $(NAME)
 
 $(NAME): $(OBJ) $(HEADER) $(LIBD) Makefile
-	$(MAKE) -C $(LIBD)
-	$(CC) $(FLAGS) -o $(NAME) $(OBJ) $(LIBFT) -I $(IMLX) -L $(LMLX) -lmlx $(FFLAGS)
+	@$(MAKE) -C $(LIBD)
+	@$(CC) $(FLAGS) -o $(NAME) $(OBJ) $(LIBFT) -I $(IMLX) -L $(LMLX) -lmlx $(FFLAGS)
 
 clean:
 	@$(RM) -f $(OBJ)

@@ -82,30 +82,6 @@ void		ft_changez(t_data *data, int key)
 	}
 }
 
-void		ft_changecote(t_data *data, int key)
-{
-	if (key == 5)
-	{
-		mlx_clear_window(data->mlx_ptr, data->win_ptr);
-		data->cote = data->cote + 1;
-		data->zplus = 0;
-		ft_change_struct(data);
-		ft_get_tab(data->arg, data);
-		ft_chartoint(data->arg, data);
-		ft_draw(data);
-	}
-	if (key == 3)
-	{
-		mlx_clear_window(data->mlx_ptr, data->win_ptr);
-		data->cote = data->cote - 1;
-		data->zplus = 0;
-		ft_change_struct(data);
-		ft_get_tab(data->arg, data);
-		ft_chartoint(data->arg, data);
-		ft_draw(data);
-	}
-}
-
 void		ft_reboot(t_data *data, int key)
 {
 	if (key == 40)
