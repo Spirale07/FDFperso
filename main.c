@@ -11,7 +11,14 @@
 /* ************************************************************************** */
 
 #include "fdf.h"
+#include "stdio.h"
 
+void     ft_getleaks(char *str)
+{
+   system("leaks fdf");
+   printf("%s\n", str);
+   getchar();
+}
 void			ft_isometrie(int i, int x, t_data *data)
 {
 	int tempox;
@@ -19,10 +26,10 @@ void			ft_isometrie(int i, int x, t_data *data)
 
 	tempox = data->tab_int[i][x].x;
 	tempoy = data->tab_int[i][x].y;
-	data->tab_int[i][x].x = (1 * tempox) - (1 * tempoy);
+	data->tab_int[i][x].x = (2 * tempox) - (2 * tempoy);
 	data->tab_int[i][x].y = (((data->tab_int[i][x].z + data->zplus))
-			* data->cote) + ((((1 / 2) + (1 % 2)) * tempox) +
-				(((1 / 2) + (1 % 2)) * tempoy));
+			* data->cote) + ((((2 / 2) + (2 % 2)) * tempox) +
+				(((2 / 2) + (2 % 2)) * tempoy));
 }
 
 void			ft_isotab(t_data *data)
@@ -70,6 +77,7 @@ void			ft_color(t_data *data, int key)
 
 int				deal_key(int key, void *param)
 {
+	ft_delete(((t_data *)param));
 	ft_putnbr(key);
 	if (key == 53)
 	{

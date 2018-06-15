@@ -82,6 +82,7 @@ void			ft_rebootstruct(t_data *data)
 {
 	data->colonne = 0;
 	data->ligne = 0;
+	free(data->tab_int);
 	data->tab_int = NULL;
 	data->dx = 0;
 	data->dy = 0;

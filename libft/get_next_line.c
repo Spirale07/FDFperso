@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "../fdf.h"
 
 static unsigned int		ft_seglen(char *mem)
 {
@@ -58,6 +59,8 @@ int						get_next_line(int const fd, char **line)
 	}
 	*line = ft_strsub(mem, 0, ft_seglen(mem));
 	if (ft_chrandcpy(mem) == NULL)
+	{
 		return (0);
+	}
 	return (1);
 }

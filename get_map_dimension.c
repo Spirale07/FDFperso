@@ -45,7 +45,11 @@ static int		ft_get_nbr_ligne(char *argv, char *line)
 	i = 0;
 	fd = open(argv, O_RDONLY);
 	while (get_next_line(fd, &line) == 1)
+	{
+		free(line);
 		i++;
+	}
+	free(line);
 	close(fd);
 	return (i);
 }
@@ -77,7 +81,9 @@ static int		ft_get_nbr_colonne(char *argv, char *line, t_data *data)
 					ft_exit(fd);
 					return (-1);
 				}
+			free(line);
 		}
+		free(line);
 		close(fd);
 	}
 	else
@@ -89,18 +95,27 @@ int				ft_get_tab(char *argv, t_data *data)
 {
 	char	*line;
 	int		i;
+	t_pixel 	**ptr = NULL;
 
 	line = NULL;
 	i = 0;
+	//ft_getleaks("debut gettab");
 	data->ligne = ft_get_nbr_ligne(argv, line);
+	//ft_getleaks("apres get nbr ligne");
 	data->colonne = ft_get_nbr_colonne(argv, line, data);
+	//ft_getleaks("apres get nbr colonne");
 	if (data->colonne == -1)
 		return (-1);
+	//ft_getleaks("Avant tabint");
+	ptr = data->tab_int;
 	data->tab_int = (t_pixel **)malloc(sizeof(t_pixel *) * data->ligne);
+	free(ptr);
+	//ft_getleaks("apres malloc tabint");
 	while (i < data->ligne)
 	{
 		data->tab_int[i] = (t_pixel *)malloc(data->colonne * sizeof(t_pixel));
 		i++;
 	}
+	//ft_getleaks("apres while");
 	return (0);
 }

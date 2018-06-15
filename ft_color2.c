@@ -55,9 +55,13 @@ void		ft_mocassin(t_data *data)
 void		ft_white(t_data *data)
 {
 	mlx_clear_window(data->mlx_ptr, data->win_ptr);
+	//ft_getleaks("after mlx");
 	data->col = 0xFFFFFF;
 	ft_change_struct(data);
+	//ft_getleaks("after change struct");
 	ft_get_tab(data->arg, data);
+//	ft_getleaks("after get tab");
 	ft_chartoint(data->arg, data);
+//	ft_getleaks("after chartoint");
 	ft_draw(data);
 }

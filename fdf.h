@@ -90,5 +90,7 @@ void				ft_rebootstruct(t_data *data);
 void				ft_rebootstruct2(t_data *data);
 void				ft_exit(int fd);
 void				ft_direction(t_data *data, int key);
+void				ft_delete(t_data *data);
+void     ft_getleaks(char *str);
 
 #endif

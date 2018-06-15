@@ -29,14 +29,30 @@ void		ft_chartoint(char *argv, t_data *data)
 			data->tab_int[h][i].z = ft_atoi(data->test[i]);
 			data->tab_int[h][i].x = data->xdecale;
 			data->tab_int[h][i].y = data->ydecale;
+			free(data->test[i]);
 			i++;
 			data->xdecale = data->xdecale + data->space;
 		}
+		free(data->test[i]);
+		free(data->test);
 		i = 0;
 		data->xdecale = 0;
 		data->ydecale = data->ydecale + data->space;
 		h++;
 		free(line);
 	}
+	free(line);
 	close(data->fd);
+}
+
+void		ft_delete(t_data *data)
+{
+	int i;
+
+	i = 0;
+	while(i < data->ligne)
+	{
+		free(data->tab_int[i]);
+		i++;
+	}
 }

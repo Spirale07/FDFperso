@@ -86,10 +86,15 @@ void		ft_reboot(t_data *data, int key)
 {
 	if (key == 40)
 	{
+	//	ft_getleaks("Debut");
 		mlx_clear_window(data->mlx_ptr, data->win_ptr);
+	//	ft_getleaks("clear window");
 		ft_rebootstruct(data);
+	//	ft_getleaks("rebootstruct");
 		ft_get_tab(data->arg, data);
+	//	ft_getleaks("gettab");
 		ft_chartoint(data->arg, data);
+		//ft_getleaks("chartoint");
 		ft_draw(data);
 	}
 	if (key == 124)
