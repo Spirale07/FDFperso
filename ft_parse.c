@@ -1,0 +1,74 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_parse.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tlaberro <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/05/31 15:45:02 by tlaberro          #+#    #+#             */
+/*   Updated: 2018/06/17 17:22:45 by tlaberro         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "fdf.h"
+
+void			ft_exitgetnbrcolonne(int fd)
+{
+	ft_putendl("La map n'est pas valide.");
+	ft_exit(fd);
+}
+
+static void		ft_supportchartoint(t_data *data, int i, int h)
+{
+	data->tab_int[h][i].z = ft_atoi(data->test[i]);
+	data->tab_int[h][i].x = data->xdecale;
+	data->tab_int[h][i].y = data->ydecale;
+	free(data->test[i]);
+}
+
+static void		ft_supportchartoint2(t_data *data, int i)
+{
+	free(data->test[i]);
+	free(data->test);
+}
+
+void			ft_chartoint(char *argv, t_data *data)
+{
+	char	*line;
+	int		i;
+	int		h;
+
+	i = 0;
+	h = 0;
+	data->fd = open(argv, O_RDONLY);
+	while (get_next_line(data->fd, &line) == 1)
+	{
+		data->test = ft_strsplit(line, ' ');
+		while (i < data->colonne)
+		{
+			ft_supportchartoint(data, i, h);
+			i++;
+			data->xdecale = data->xdecale + data->space;
+		}
+		ft_supportchartoint2(data, i);
+		i = 0;
+		data->xdecale = 0;
+		data->ydecale = data->ydecale + data->space;
+		h++;
+		free(line);
+	}
+	free(line);
+	close(data->fd);
+}
+
+void			ft_delete(t_data *data)
+{
+	int i;
+
+	i = 0;
+	while (i < data->ligne)
+	{
+		free(data->tab_int[i]);
+		i++;
+	}
+}
