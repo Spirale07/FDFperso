@@ -31,6 +31,8 @@ static int		ft_wordcount(const char *str, char c)
 		}
 		i++;
 	}
+	if (len == 0)
+		exit(EXIT_FAILURE);
 	if (str[i - 1] != c)
 		return (len + 1);
 	else
@@ -97,6 +99,8 @@ int				ft_get_tab(char *argv, t_data *data)
 	i = 0;
 	data->ligne = ft_get_nbr_ligne(argv, line);
 	data->colonne = ft_get_nbr_colonne(argv, line, data);
+	if (data->ligne == 0 && data->colonne == 0)
+		exit(EXIT_FAILURE);
 	if (data->colonne == -1)
 		return (-1);
 	ptr = data->tab_int;

@@ -43,35 +43,13 @@ void		ft_move(t_data *data, int key)
 	if (key == 126)
 	{
 		mlx_clear_window(data->mlx_ptr, data->win_ptr);
-		data->decal = data->decal - 50;
-		ft_change_struct(data);
-		ft_get_tab(data->arg, data);
-		ft_chartoint(data->arg, data);
-		ft_draw(data);
-	}
-	if (key == 125)
-	{
-		mlx_clear_window(data->mlx_ptr, data->win_ptr);
-		data->decal = data->decal + 50;
-		ft_change_struct(data);
-		ft_get_tab(data->arg, data);
-		ft_chartoint(data->arg, data);
-		ft_draw(data);
-	}
-}
-
-void		ft_changez(t_data *data, int key)
-{
-	if (key == 7)
-	{
-		mlx_clear_window(data->mlx_ptr, data->win_ptr);
 		data->zplus = data->zplus + 30;
 		ft_change_struct(data);
 		ft_get_tab(data->arg, data);
 		ft_chartoint(data->arg, data);
 		ft_draw(data);
 	}
-	if (key == 6)
+	if (key == 125)
 	{
 		mlx_clear_window(data->mlx_ptr, data->win_ptr);
 		data->zplus = data->zplus - 30;

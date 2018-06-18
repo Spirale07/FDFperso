@@ -84,7 +84,6 @@ void				ft_color(t_data *data, int key);
 void				ft_zoom(t_data *data, int key);
 void				ft_getleaks(char *str);
 void				ft_move(t_data *data, int key);
-void				ft_changez(t_data *data, int key);
 void				ft_reboot(t_data *data, int key);
 void				ft_rebootstruct(t_data *data);
 void				ft_rebootstruct2(t_data *data);

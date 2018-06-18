@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "fdf.h"
-#include "stdio.h"
 
 void			ft_isometrie(int i, int x, t_data *data)
 {
@@ -74,8 +73,9 @@ int				deal_key(int key, void *param)
 	if (key != 82 && key != 83 && key != 84 && key != 85 && key != 86 &&
 		key != 87 && key != 88 && key != 89 && key != 91 && key != 53 &&
 		key != 92 && key != 69 && key != 78 && key != 126 && key != 125 &&
-		key != 7 && key != 6 && key != 40 && key != 124 && key != 123)
+		key != 40 && key != 124 && key != 123)
 		return (0);
+	ft_putnbr(key);
 	if (((t_data *)param)->tab_int != NULL)
 		ft_delete(((t_data *)param));
 	if (key == 53)
@@ -89,7 +89,6 @@ int				deal_key(int key, void *param)
 	ft_color(((t_data *)param), key);
 	ft_zoom(((t_data *)param), key);
 	ft_move(((t_data *)param), key);
-	ft_changez(((t_data *)param), key);
 	ft_reboot(((t_data *)param), key);
 	ft_direction(((t_data *)param), key);
 	return (0);
